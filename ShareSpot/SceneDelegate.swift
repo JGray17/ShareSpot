@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  ShareSpot
+//  testing
 //
-//  Created by Joshua Gray on 3/24/21.
+//  Created by Joshua Gray on 3/25/21.
 //
 
 import UIKit
