@@ -21,17 +21,45 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkF-y2-51b">
+                                <rect key="frame" x="173" y="793" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LkF-y2-51b" secondAttribute="height" multiplier="1:1" id="97X-FT-gqT"/>
+                                    <constraint firstAttribute="height" constant="69" id="bvD-wR-k4E"/>
+                                    <constraint firstAttribute="width" constant="69" id="raL-SJ-Pt1"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="homeicon"/>
+                                <connections>
+                                    <segue destination="j64-rV-AIb" kind="show" id="Yxq-6s-zYc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="LkF-y2-51b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="173" id="8yS-Am-bVe"/>
+                            <constraint firstItem="LkF-y2-51b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UCg-Hm-nSV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LkF-y2-51b" secondAttribute="trailing" constant="172" id="ni6-T7-5PV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="88.392857142857139"/>
         </scene>
+        <!--home-->
+        <scene sceneID="iUL-ZQ-dYA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="feed" referencedIdentifier="home" id="j64-rV-AIb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IcR-54-yVU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PbW-ji-r5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="447"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="homeicon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
