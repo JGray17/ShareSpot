@@ -76,6 +76,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Please Allow Access to take a picture</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to photos</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

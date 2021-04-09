@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48662C07260D78BE006390A9 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48662C06260D78BE006390A9 /* credentials.plist */; };
+		487690D0261FEAF400D86BA1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487690CF261FEAF400D86BA1 /* SwiftUIView.swift */; };
 		48CA83BD260C3B4000A18F35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA83BC260C3B4000A18F35 /* AppDelegate.swift */; };
 		48CA83BF260C3B4000A18F35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA83BE260C3B4000A18F35 /* SceneDelegate.swift */; };
 		48CA83C1260C3B4000A18F35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA83C0260C3B4000A18F35 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		3BDD30976165DDCCEB0807C0 /* Pods_ShareSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48662C06260D78BE006390A9 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		487690CF261FEAF400D86BA1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		48CA83B9260C3B4000A18F35 /* ShareSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CA83BC260C3B4000A18F35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48CA83BE260C3B4000A18F35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				48CA83CA260C3B4500A18F35 /* Info.plist */,
 				48662C06260D78BE006390A9 /* credentials.plist */,
 				48D93E3C261D539900D4DD0A /* Camera.storyboard */,
+				487690CF261FEAF400D86BA1 /* SwiftUIView.swift */,
 			);
 			path = ShareSpot;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				48CA83C1260C3B4000A18F35 /* ViewController.swift in Sources */,
 				48CA83BD260C3B4000A18F35 /* AppDelegate.swift in Sources */,
+				487690D0261FEAF400D86BA1 /* SwiftUIView.swift in Sources */,
 				48CA83BF260C3B4000A18F35 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

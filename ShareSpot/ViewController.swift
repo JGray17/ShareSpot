@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         button.backgroundColor = .systemGray
         button.setTitle("Take Picture", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        
+        uploadButton.backgroundColor = .systemGray
+        uploadButton.setTitle("Upload", for: .normal)
+        uploadButton.setTitleColor(.white, for: .normal)
     }
     
     @IBAction func didTapSignOut(_ sender: AnyObject) {
@@ -32,6 +36,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
+    @IBOutlet var uploadButton: UIButton!
     
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
@@ -39,7 +44,7 @@ class ViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true)
     }
-
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate,
