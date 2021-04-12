@@ -7,4 +7,6 @@ target 'ShareSpot' do
 
   # Pods for ShareSpot
   pod 'GoogleSignIn'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 end

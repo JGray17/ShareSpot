@@ -7,11 +7,41 @@
 
 import UIKit
 import GoogleSignIn
+import FirebaseStorage
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController, UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate {
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var button: UIButton?
+    @IBOutlet weak var label: UILabel?
+    
+    private let storage = Storage.storage().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        label?.numberOfLines = 0
+        label?.textAlignment = .center
+        imageView.contentMode = .scaleAspectFit
+        
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String, let url = URL(string: urlString) else { return }
+        
+        label?.text = urlString
+        
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            DispatchQueue.main.async{
+                let image = UIImage(data: data)
+                self.imageView.image = image
+            }
+        })
+        
+        task.resume()
+        
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance()?.presentingViewController = self
 
@@ -19,13 +49,9 @@ class ViewController: UIViewController {
             GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
         imageView.backgroundColor = .secondarySystemBackground
-        button.backgroundColor = .systemGray
-        button.setTitle("Take Picture", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        
-        uploadButton.backgroundColor = .systemGray
-        uploadButton.setTitle("Upload", for: .normal)
-        uploadButton.setTitleColor(.white, for: .normal)
+        button?.backgroundColor = .systemGray
+        button?.setTitle("Take Picture", for: .normal)
+        button?.setTitleColor(.white, for: .normal)
     }
     
     @IBAction func didTapSignOut(_ sender: AnyObject) {
@@ -34,10 +60,6 @@ class ViewController: UIViewController {
         // [END_EXCLUDE]
       }
     
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var button: UIButton!
-    @IBOutlet var uploadButton: UIButton!
-    
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
         picker.sourceType = .camera
@@ -45,27 +67,47 @@ class ViewController: UIViewController {
         present(picker, animated: true)
     }
     
-}
-
-extension ViewController: UIImagePickerControllerDelegate,
-                         UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+    @IBAction func didTapUploadButton(){
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{ return }
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
-                UIImage else {
+        guard let imageData = image.pngData() else{ return }
+        
+        // upload image data, get download URL, save download URL to userdefaults
+        storage.child("images/file.png").putData(imageData, metadata: nil, completion: {_, error in
+            guard error == nil else {
+                print("Failed to upload")
                 return
             }
-        
-        imageView.image = image
+            self.storage.child("images/file.png").downloadURL(completion: { url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                let urlString = url.absoluteString
+                
+                DispatchQueue.main.async{
+                    self.label?.text = urlString
+                    self.imageView.image = image
+                }
+                
+                print("Download URL: \(urlString)")
+                UserDefaults.standard.setValue(urlString, forKey: "url")
+            })
+        })
     }
-  
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        picker.dismiss(animated: true, completion: nil)
+    }
 
 }
+
 

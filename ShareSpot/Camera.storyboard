@@ -12,19 +12,15 @@
         <scene sceneID="BSQ-Yq-mm8">
             <objects>
                 <viewController id="V2X-30-md6" customClass="UICollectionViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PKG-1n-J5D" customClass="SwiftUIView">
+                    <view key="view" contentMode="scaleToFill" id="PKG-1n-J5D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-F1-rkR">
-                                <rect key="frame" x="87" y="616" width="240" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqQ-3J-eP8">
+                                <rect key="frame" x="148" y="117" width="95" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Upload"/>
+                                <state key="normal" title="Button"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jIo-Kl-IRH" customClass="SwiftUIView">
-                                <rect key="frame" x="20" y="169" width="374" height="336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zA1-XM-Ip4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
