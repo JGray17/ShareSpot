@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48662C07260D78BE006390A9 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48662C06260D78BE006390A9 /* credentials.plist */; };
 		487690D0261FEAF400D86BA1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487690CF261FEAF400D86BA1 /* SwiftUIView.swift */; };
 		48CA83BD260C3B4000A18F35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA83BC260C3B4000A18F35 /* AppDelegate.swift */; };
 		48CA83BF260C3B4000A18F35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA83BE260C3B4000A18F35 /* SceneDelegate.swift */; };
@@ -18,12 +17,12 @@
 		48D93E3D261D539900D4DD0A /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D93E3C261D539900D4DD0A /* Camera.storyboard */; };
 		76C4B35126126E6D006400FB /* feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C4B35026126E6D006400FB /* feed.storyboard */; };
 		76E236E82626747B00E42015 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76E236E72626747B00E42015 /* GoogleService-Info.plist */; };
+		76E236EC262681D300E42015 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76E236EB262681D300E42015 /* credentials.plist */; };
 		F9510F1A1A947424D7933048 /* Pods_ShareSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDD30976165DDCCEB0807C0 /* Pods_ShareSpot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BDD30976165DDCCEB0807C0 /* Pods_ShareSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		48662C06260D78BE006390A9 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		487690CF261FEAF400D86BA1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		48CA83B9260C3B4000A18F35 /* ShareSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CA83BC260C3B4000A18F35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		48D93E3C261D539900D4DD0A /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		76C4B35026126E6D006400FB /* feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = feed.storyboard; sourceTree = "<group>"; };
 		76E236E72626747B00E42015 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76E236EB262681D300E42015 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		CA9FF287D0508955C0798BDF /* Pods-ShareSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareSpot.debug.xcconfig"; path = "Target Support Files/Pods-ShareSpot/Pods-ShareSpot.debug.xcconfig"; sourceTree = "<group>"; };
 		D90E2D38C6B5C184FC97E46D /* Pods-ShareSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareSpot.release.xcconfig"; path = "Target Support Files/Pods-ShareSpot/Pods-ShareSpot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,9 +89,9 @@
 				48CA83C5260C3B4500A18F35 /* Assets.xcassets */,
 				48CA83C7260C3B4500A18F35 /* LaunchScreen.storyboard */,
 				48CA83CA260C3B4500A18F35 /* Info.plist */,
-				48662C06260D78BE006390A9 /* credentials.plist */,
 				48D93E3C261D539900D4DD0A /* Camera.storyboard */,
 				487690CF261FEAF400D86BA1 /* SwiftUIView.swift */,
+				76E236EB262681D300E42015 /* credentials.plist */,
 				76E236E72626747B00E42015 /* GoogleService-Info.plist */,
 			);
 			path = ShareSpot;
@@ -169,9 +169,9 @@
 				48CA83C9260C3B4500A18F35 /* LaunchScreen.storyboard in Resources */,
 				76E236E82626747B00E42015 /* GoogleService-Info.plist in Resources */,
 				48D93E3D261D539900D4DD0A /* Camera.storyboard in Resources */,
-				48662C07260D78BE006390A9 /* credentials.plist in Resources */,
 				48CA83C6260C3B4500A18F35 /* Assets.xcassets in Resources */,
 				76C4B35126126E6D006400FB /* feed.storyboard in Resources */,
+				76E236EC262681D300E42015 /* credentials.plist in Resources */,
 				48CA83C4260C3B4000A18F35 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

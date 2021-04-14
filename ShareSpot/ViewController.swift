@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // FIREBASE PICTURE STUFF
         label?.numberOfLines = 0
         label?.textAlignment = .center
         imageView.contentMode = .scaleAspectFit
@@ -41,6 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         })
         
         task.resume()
+        // END FIREBASE STUFF
         
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance()?.presentingViewController = self
