@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.142826381778-37rb8p428p40stgalfkt1mhn6v1ipgvb</string>
+				<string>com.googleusercontent.apps.777796258797-npkj5c8q7td3ookahf4j85mbsc8voo4i</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,6 +39,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Please Allow Access to take a picture</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please Allow Access to upload a picture</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -74,10 +78,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Please Allow Access to take a picture</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please Allow Access to upload a picture</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

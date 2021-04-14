@@ -13,6 +13,9 @@ import FirebaseStorage
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
 
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    var userID = String()
+    @IBOutlet var signInButton: GIDSignInButton!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var button: UIButton?
     @IBOutlet weak var label: UILabel?
@@ -28,6 +31,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         imageView.contentMode = .scaleAspectFit
         
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String, let url = URL(string: urlString) else { return }
+        
+        print("email as seen in viewcontroller = \(delegate.userEmail)")
+        let components = delegate.userEmail.components(separatedBy: "@")
+        userID = components[0]
         
         label?.text = urlString
         
@@ -47,20 +54,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance()?.presentingViewController = self
 
-            // Automatically sign in the user.
-            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        // Automatically sign in the user.
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
-        imageView.backgroundColor = .secondarySystemBackground
-        button?.backgroundColor = .systemGray
-        button?.setTitle("Take Picture", for: .normal)
-        button?.setTitleColor(.white, for: .normal)
     }
-    
-    @IBAction func didTapSignOut(_ sender: AnyObject) {
-        GIDSignIn.sharedInstance().signOut()
-        // [START_EXCLUDE silent]
-        // [END_EXCLUDE]
-      }
     
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
@@ -84,19 +81,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         guard let imageData = image.pngData() else{ return }
         
         // upload image data, get download URL, save download URL to userdefaults
-        storage.child("images/file.png").putData(imageData, metadata: nil, completion: {_, error in
+        storage.child("\(self.userID)/file.png").putData(imageData, metadata: nil, completion: {_, error in
             guard error == nil else {
                 print("Failed to upload")
                 return
             }
-            self.storage.child("images/file.png").downloadURL(completion: { url, error in
+            self.storage.child("\(self.userID)/file.png").downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     return
                 }
                 let urlString = url.absoluteString
                 
                 DispatchQueue.main.async{
-                    self.label?.text = urlString
+                    self.label?.text = urlString //self.userID?.profile.email
                     self.imageView.image = image
                 }
                 
