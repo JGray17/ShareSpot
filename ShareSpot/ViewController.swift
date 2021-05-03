@@ -36,7 +36,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         let components = delegate.userEmail.components(separatedBy: "@")
         userID = components[0]
         
-        label?.text = urlString
+        var link_split = urlString.components(separatedBy: "/o/")
+        var initUserID = link_split[1]
+        link_split = initUserID.components(separatedBy: "%")
+        initUserID = link_split[0]
+        
+        label?.text = "Image posted by " + initUserID + ".\nFind the image at:\n" + urlString
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
             guard let data = data, error == nil else {
@@ -63,6 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
+        picker.allowsEditing = true
         present(picker, animated: true)
     }
     
@@ -93,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
                 let urlString = url.absoluteString
                 
                 DispatchQueue.main.async{
-                    self.label?.text = urlString //self.userID?.profile.email
+                    self.label?.text = "Image posted by " + self.userID + ".\nFind the image at:\n" + urlString
                     self.imageView.image = image
                 }
                 
